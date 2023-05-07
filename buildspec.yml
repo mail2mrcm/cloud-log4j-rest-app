@@ -7,7 +7,7 @@ phases:
       - REPOSITORY_URI=536771765020.dkr.ecr.us-east-1.amazonaws.com/log4japp
       - ARTIFACT=log4j-rest
       - ARTIFACT_TYPE=.jar 
-      - TAG_NAME=$REPOSITORY_URI:$ARTIFACT
+      - TAG_NAME=$REPOSITORY_URI:latest
       - echo $AWS_DEFAULT_REGION 
       - echo $ARTIFACT
       - echo $ARTIFACT_TYPE
