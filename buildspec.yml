@@ -5,7 +5,7 @@ phases:
     commands:
      # variables
       - REPOSITORY_URI=536771765020.dkr.ecr.us-east-1.amazonaws.com/log4japp
-      - ARTIFACT=rest-sample-1.0.1
+      - ARTIFACT=log4j-rest
       - ARTIFACT_TYPE=.jar 
       - TAG_NAME=$REPOSITORY_URI:$ARTIFACT
       - echo $AWS_DEFAULT_REGION 
