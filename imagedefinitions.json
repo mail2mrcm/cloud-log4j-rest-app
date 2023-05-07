@@ -1,0 +1,6 @@
+[
+    {
+        "name": "log4j-rest",
+        "imageUri": "536771765020.dkr.ecr.us-east-1.amazonaws.com/log4japp:latest:latest"
+    }
+]
