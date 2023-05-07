@@ -5,7 +5,7 @@ phases:
     commands:
      # variables
       - REPOSITORY_URI=536771765020.dkr.ecr.us-east-1.amazonaws.com/log4japp
-      - ARTIFACT=spring-boot
+      - ARTIFACT=rest-sample-1.0.1
       - ARTIFACT_TYPE=.jar 
       - TAG_NAME=$REPOSITORY_URI:$ARTIFACT
       - echo $AWS_DEFAULT_REGION 
@@ -38,8 +38,8 @@ phases:
   post_build:
     commands:
       #- docker tag $REPOSITORY_URI:$ARTIFACT $REPOSITORY_URI:$$ARTIFACT
-       #- $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-       - $(aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 536771765020.dkr.ecr.us-east-1.amazonaws.com) 
+       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+      #- $(aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 536771765020.dkr.ecr.us-east-1.amazonaws.com) 
        - echo Build completed on 'date'
        - echo Pushing the Docker images...
        - docker push $TAG_NAME
