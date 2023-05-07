@@ -49,4 +49,4 @@ phases:
 artifacts:
      files:
       - imagedefinitions.json  
-      - target/logging-log4j2-1.0.jar
+      - target/log4j-rest-1.0.1.jar
