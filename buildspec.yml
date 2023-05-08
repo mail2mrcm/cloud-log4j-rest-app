@@ -17,9 +17,9 @@ phases:
       - sudo yum update -y
       - yum install -y maven
       # Amazon Linux 2
-      - sudo amazon-linux-extras install java-openjdk11
-      - sudo yum install -y docker
-      - sudo systemctl start docker.service
+      #- sudo amazon-linux-extras install java-openjdk11
+      #- sudo yum install -y docker
+      #- sudo systemctl start docker.service
       #- apt-get install -y gradle
 
   pre_build:
