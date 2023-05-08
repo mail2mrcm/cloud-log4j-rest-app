@@ -18,7 +18,7 @@ phases:
       - yum install -y maven
       # Amazon Linux 2
       #- sudo amazon-linux-extras install java-openjdk11
-      #- sudo yum install -y docker
+      - sudo yum install -y docker
       #- sudo systemctl start docker.service
       #- apt-get install -y gradle
 
@@ -35,12 +35,12 @@ phases:
       #- gradle build 
       
       - echo Building the Docker image...  
-      - sudo docker build -t $TAG_NAME .
+      - docker build -t $TAG_NAME .
       - docker tag $TAG_NAME $TAG_NAME
   post_build:
     commands:
       #- docker tag $REPOSITORY_URI:$ARTIFACT $REPOSITORY_URI:$$ARTIFACT
-       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
+       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 536771765020.dkr.ecr.us-east-1.amazonaws.com
       #- $(aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 536771765020.dkr.ecr.us-east-1.amazonaws.com) 
        - echo Build completed on 'date'
        - echo Pushing the Docker images...
