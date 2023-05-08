@@ -33,7 +33,7 @@ phases:
       #- gradle build 
       
       - echo Building the Docker image...  
-      - docker build -f Dockerfile -t $TAG_NAME .
+      - docker build -t $TAG_NAME .
       - docker tag $TAG_NAME $TAG_NAME
   post_build:
     commands:
