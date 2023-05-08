@@ -18,6 +18,8 @@ phases:
       - yum install -y maven
       # Amazon Linux 2
       - sudo amazon-linux-extras install java-openjdk11
+      - sudo yum install -y docker
+      - sudo systemctl start docker.service
       #- apt-get install -y gradle
 
   pre_build:
@@ -33,7 +35,7 @@ phases:
       #- gradle build 
       
       - echo Building the Docker image...  
-      - docker build -t $TAG_NAME .
+      - sudo docker build -t $TAG_NAME .
       - docker tag $TAG_NAME $TAG_NAME
   post_build:
     commands:
